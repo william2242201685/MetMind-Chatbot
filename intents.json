@@ -1,0 +1,470 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day"],
+         "responses": ["Hello, thanks for visiting", "Good to see you again", "Hi there, how can I help?"]
+        },
+        {"tag": "goodbye",
+         "patterns": ["Bye", "See you later", "Goodbye"],
+         "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."]
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"]
+        },
+
+
+
+        {"tag": "symptoms",
+         "patterns": ["Symptom", "Symptoms", "Anxiety Symptoms", "Support My Symptoms", "Check My Symptoms"],
+         "responses": ["Please specify what physical and/or mental anxiety symptoms are more prevalent whilst at university during covid-19! I.E. 'I feel inferior to other students' or 'I have feelings of nausea'"],
+         "context_set": "symptomMentalOrPhysical",
+          "intent": "userChoiceOneGrp_"
+        },
+
+
+
+        {"tag": "mentalSymptom_HighPriority",
+         "patterns": ["userChoiceOneGrp_I am feeling worthless", "userChoiceOneGrp_I have feelings of worthlessness", "userChoiceOneGrp_worthless", "userChoiceOneGrp_I am feeling useless", "userChoiceOneGrp_I have feelings of uselessness", "userChoiceOneGrp_I am feeling no good", "userChoiceOneGrp_no good", "userChoiceOneGrp_I have no worth", "userChoiceOneGrp_I have lost all worth", "userChoiceOneGrp_useless", "userChoiceOneGrp_worthless",
+         "userChoiceOneGrp_I am feeling hopeless", "userChoiceOneGrp_I have feelings of hopelessness", "userChoiceOneGrp_I have feelings of hopeless", "userChoiceOneGrp_I have been experiencing feelings of hopeless", "userChoiceOneGrp_I have no hope", "userChoiceOneGrp_I have no hope", "userChoiceOneGrp_I am feeling demoralized", "userChoiceOneGrp_demoralized", "userChoiceOneGrp_I have no confidence", "userChoiceOneGrp_no confidence", "userChoiceOneGrp_lack of confidence", "userChoiceOneGrp_I am have feelings of despair", "userChoiceOneGrp_despair", "userChoiceOneGrp_I am feeling depressed", "userChoiceOneGrp_I have feelings of depression", "userChoiceOneGrp_depression", "userChoiceOneGrp_depressed", "userChoiceOneGrp_dont know what to do", "userChoiceOneGrp_I am feeling lost", "userChoiceOneGrp_I feel like I have lost all motivation", "userChoiceOneGrp_I feel like I have lost all motivation", "userChoiceOneGrp_lack of motivation",
+         "userChoiceOneGrp_I am feeling suicidal", "userChoiceOneGrp_Feeling suicidal", "userChoiceOneGrp_I am having suicidal thoughts", "userChoiceOneGrp_I am having suicidal feelings", "userChoiceOneGrp_I am having thoughts of suicide", "userChoiceOneGrp_Self harm", "userChoiceOneGrp_I have dark thoughts", "userChoiceOneGrp_dark thoughts", "userChoiceOneGrp_suicide", "userChoiceOneGrp_suicidal", "userChoiceOneGrp_I have thoughts of harming myself", "userChoiceOneGrp_I have thoughts of hurting myself", "userChoiceOneGrp_I am having thoughts of self harm", "userChoiceOneGrp_I am having thoughts of killing myself", "userChoiceOneGrp_killing myself", "userChoiceOneGrp_I want to kill myself", "userChoiceOneGrp_I want to end it all", "userChoiceOneGrp_I want to die", "userChoiceOneGrp_I am feeling dark thoughts", "userChoiceOneGrp_I am thinking of self harm", "userChoiceOneGrp_I am thinking of self harming myself", "userChoiceOneGrp_I am thinking suicide", "userChoiceOneGrp_I am scared that I could harm myself", "userChoiceOneGrp_I have anxiety", "userChoiceOneGrp_I have feelings of anxiety", "userChoiceOneGrp_feelings of anxiety"
+         ],
+         "responses": ["It is heavily advised that you meet with your local GP, Hospital and/or psychiatrist as soon as possible due to the nature of your anxiety symptoms specifying that you could be experiencing severe dark/negative thoughts in which could result in suicidal tendencies. Such services will provide professional conversations as to listen and guide you through your issues in a sensitive and professional manner as to ensure your voice in heard and to provide guidances on how to overcome such mentalities. It is important to understand that you are not alone in this. Therefore, would you like us to redirect you to the NHS helplines page as to provide a means to gain support from bodies like the Samaritans?"],
+         "context_set": "mentalSymptom_HighPriority",
+          "context_filter": "symptomMentalOrPhysical",
+          "intent": "mntSympHighPriority_"
+        },
+        {"tag": "mentalSymptom_HighPriority2_ConsentYes",
+         "patterns": ["mntSympHighPriority_yes", "mntSympHighPriority_oh yes", "mntSympHighPriority_sure"],
+         "responses": ["It is also important to consider partaking in mindful exercises such as body scans as to provide some pre-substitute anxiety management as to help ground/calm you back to normality before your meetup with a professional. Partake in breathing exercises whilst meditating on the actions of your physical/mental self. Try to meditate on every sensation, emotion or distress and try to bring an open/ discerning attention to such feelings and emotions. Would you like to continue your self-management advice?"],
+          "context_set": "mentalSymptom_HighPriority2",
+          "context_filter": "mentalSymptom_HighPriority",
+          "web": "https://111.wales.nhs.uk/Suicidalthoughts/",
+          "intent": "mntSympHighPriority2_"
+        },
+        {"tag": "mentalSymptom_HighPriority2_ConsentNo",
+         "patterns": ["mntSympHighPriority_no", "mntSympHighPriority_oh no", "mntSympHighPriority_nope"],
+         "responses": ["Thats ok! However, It is also important to consider partaking in mindful exercises such as body scans as to provide some pre-substitute anxiety management as to help ground/calm you back to normality before your meetup with a professional. Partake in breathing exercises whilst meditating on the actions of your physical/mental self. Try to meditate on every sensation, emotion or distress and try to bring an open/ discerning attention to such feelings and emotions. Would you like to continue your self-management advice?"],
+          "context_set": "mentalSymptom_HighPriority2",
+          "context_filter": "mentalSymptom_HighPriority",
+          "intent": "mntSympHighPriority2_"
+        },
+        {"tag": "mentalSymptom_HighPriority3_ConsentYes",
+         "patterns": ["mntSympHighPriority2_yes", "mntSympHighPriority2_oh yes", "mntSympHighPriority2_sure"],
+         "responses": ["It is also highly advisable to communicate with your family/friends as letting your family or friends know what's going on for you can provide comfort and reassurance that you are loved and are not alone and may even offer additional support and help keep you safe. Remember, There's no right or wrong way to talk about suicidal feelings, starting the conversation is what's important.<br/><br/> However, it is also recommended to utilise out semi-anonymized emailing service as to inform the wellbeing team about your current conditions as to provide a more direct/quicker response to professional help as to guide you to more direct help and guidance. Would you like us to send the wellbeing team a copy of your specified anxieties as for them to contact you regarding your issues?"],
+          "context_set": "mentalSymptom_HighPriority3",
+          "context_filter": "mentalSymptom_HighPriority2",
+          "intent": "mntSympHighPriority3_"
+        },
+        {"tag": "mentalSymptom_HighPriority3_ConsentNo",
+         "patterns": ["mntSympHighPriority2_no", "mntSympHighPriority2_oh no", "mntSympHighPriority2_nope"],
+         "responses": ["Thats fine! I hope our Self-Management Advice makes your experience at university a lot more manageable"],
+          "context_filter": "mentalSymptom_HighPriority2"
+        },
+        {"tag": "mentalSymptom_HighPriority4_ConsentYes",
+         "patterns": ["mntSympHighPriority3_yes", "mntSympHighPriority3_oh yes", "mntSympHighPriority3_sure"],
+         "responses": ["Please Enter Your Student ID"],
+          "context_filter": "mentalSymptom_HighPriority3",
+          "email": ["william2242215@yahoo.co.uk"],
+          "symptom_type": "Mental",
+          "symptom_problem": "dangers of leading to dark/suicidal thoughts"
+        },
+        {"tag": "mentalSymptom_HighPriority4_ConsentNo",
+         "patterns": ["mntSympHighPriority3_no", "mntSympHighPriority3_oh no", "mntSympHighPriority3_nope"],
+         "responses": ["Thats Ok! Hope you feel better soon!"],
+          "context_filter": "mentalSymptom_HighPriority3"
+        },
+
+
+
+        {"tag": "mentalSymptom_ImpostorSyndrome",
+         "patterns": ["userChoiceOneGrp_I am feeling guilty", "userChoiceOneGrp_Feeling guilty", "userChoiceOneGrp_I am feeling guilty for a lot of things", "userChoiceOneGrp_I am feeling guilty about my university work", "userChoiceOneGrp_I am feeling guilty about my university", "userChoiceOneGrp_I am feeling guilty about my course", "userChoiceOneGrp_I am feeling guilty about my module", "userChoiceOneGrp_I am feeling guilty about my university progress", "userChoiceOneGrp_I have guilty thoughts", "userChoiceOneGrp_Feelings of guilt", "userChoiceOneGrp_I have been experiencing guilt", "userChoiceOneGrp_I have been feeling guilty", "userChoiceOneGrp_I feel guilty about my educational skills", "userChoiceOneGrp_I feel guilty about my assignments",
+           "userChoiceOneGrp_Feelings of inferiority", "userChoiceOneGrp_Feelings of I am feeling inferior", "userChoiceOneGrp_I feel inferior to other students", "userChoiceOneGrp_I have Feelings of inferiority to other students", "userChoiceOneGrp_I feel im not as good as other students", "userChoiceOneGrp_I feel less capable than other students", "userChoiceOneGrp_I feel inferior to my peers", "userChoiceOneGrp_I have Feelings of inferiority to my peers", "userChoiceOneGrp_I feel im not as good as my peers", "userChoiceOneGrp_I feel less capable than my peers", "userChoiceOneGrp_I dont feel as capable as other students", "userChoiceOneGrp_I dont feel as capable as my peers", "userChoiceOneGrp_I don’t belong", "userChoiceOneGrp_I dont belong", "userChoiceOneGrp_I do not belong", "userChoiceOneGrp_I don’t belong in university", "userChoiceOneGrp_I don’t belong in my course"
+         ],
+         "responses": ["The symptoms you have specified have indicated that you could be suffering from imposters syndrome in which is the fear of feeling inferior to your peers and/or that you do not belong in university. Therefore, it is heavily advised to meet with the wellbeing team as to provide guidance and support to boost your self-confidence and self-esteem as such fears/symptoms are a direct cause of social anxiety. There is a reason why you were accepted into university and you may not believe it yourself, but you are just as competent as the rest of your peers. Just remember that we are all in the same boat as an interesting fact regarding imposters syndrome is that it is one of the most prevalent fears/anxieties seen by the wellbeing team and they know your true potential as a student. Would you like us to redirect you to the wellbeing team as to book an appointment?"],
+         "context_set": "mentalSymptom_ImpostorSyndrome",
+          "context_filter": "symptomMentalOrPhysical",
+          "intent": "mntImpSyn_"
+        },
+        {"tag": "mentalSymptom_ImpostorSyndrome2_ConsentYes",
+         "patterns": ["mntImpSyn_yes", "mntImpSyn_oh yes", "mntImpSyn_sure"],
+         "responses": ["It is recommended to partake in planning/management techniques such as CPD in which stands for Continuing Professional Development as to identify knowledge gaps and to manage/record/review/reflect your learning/development as a means to become more competent and effective in the academical and work base environment as to shatter such confidence/insecurity issues. Such courses also help identify and educate participants about imposters syndrome itself and how to manage/overcome such issues. Would you like to receive further self-management support?"],
+         "context_set": "mentalSymptom_ImpostorSyndrome2",
+          "context_filter": "mentalSymptom_ImpostorSyndrome",
+          "intent": "mntImpSyn2_",
+          "web": "https://www.cardiffmet.ac.uk/study/studentservices/wellbeing-service/Pages/Home.aspx"
+        },
+        {"tag": "mentalSymptom_ImpostorSyndrome2_ConsentNo",
+         "patterns": ["mntImpSyn_no", "mntImpSyn_oh no", "mntImpSyn_nope"],
+         "responses": ["Thats fine! However, It is recommended to partake in planning/management techniques such as CPD in which stands for Continuing Professional Development as to identify knowledge gaps and to manage/record/review/reflect your learning/development as a means to become more competent and effective in the academical and work base environment as to shatter such confidence/insecurity issues. Such courses also help identify and educate participants about imposters syndrome itself and how to manage/overcome such issues. Would you like to receive further self-management support?"],
+          "context_set": "mentalSymptom_ImpostorSyndrome2",
+         "context_filter": "mentalSymptom_ImpostorSyndrome",
+          "intent": "mntImpSyn2_"
+        },
+        {"tag": "mentalSymptom_ImpostorSyndrome3_ConsentYes",
+         "patterns": ["mntImpSyn2_yes", "mntImpSyn2_oh yes", "mntImpSyn2_sure"],
+         "responses": ["It is recommended to conduct in efficient time-management plans as imposters-syndromes anxieties can result in a student feeling obliged to overwork/overstudy as to keep up with their peers in which cause severe health risks resulting from being overburdened/burned-out from excessive workloads. Therefore, the utilisation of efficient time-management should be utilised to ensure you incorporate enough personal time and hobbies whilst ensuring such assignments are completed on time as to reduce risks of anxiety whilst ensuring you get the mark you deserve."],
+         "context_set": "mentalSymptom_ImpostorSyndrome3",
+          "context_filter": "mentalSymptom_ImpostorSyndrome2",
+          "intent": "mntImpSyn3_"
+        },
+        {"tag": "mentalSymptom_ImpostorSyndrome3_ConsentNo",
+         "patterns": ["mntImpSyn2_no", "mntImpSyn2_oh no", "mntImpSyn2_nope"],
+         "responses": ["Thats fine! I hope our Self-Management Advice makes your experience at university a lot more manageable"],
+         "context_filter": "mentalSymptom_ImpostorSyndrome2"
+        },
+        {"tag": "mentalSymptom_ImpostorSyndrome4_ConsentYes",
+         "patterns": ["mntImpSyn3_yes", "mntImpSyn3_oh yes", "mntImpSyn3_sure"],
+         "responses": ["It is also recommended to communicate with your family/friends/staff through safe platforms such as social media as to provide ease of mind as communicating with a tutor/friend will identify that we are in the same boat and we all have feelings of inferiority to eachother. It is only normal as we all have our downfalls/faults for some modules/studies. Take your time as the utilisation of social media is a great platform as to provide/receive module/assignment related guidances. You may not believe it but a lot of your peers will also severely benefit from your current knowledge. "],
+          "context_filter": "mentalSymptom_ImpostorSyndrome3"
+        },
+        {"tag": "mentalSymptom_ImpostorSyndrome4_ConsentNo",
+         "patterns": ["mntImpSyn3_no", "mntImpSyn3_oh no", "mntImpSyn3_nope"],
+         "responses": ["Thats fine! I hope our Self-Management Advice makes your experience at university a lot more manageable"],
+         "context_filter": "mentalSymptom_ImpostorSyndrome3"
+        },
+
+
+
+        {"tag": "mentalSymptom_Anger_&_Irritability",
+         "patterns": ["userChoiceOneGrp_I am feeling irritable", "userChoiceOneGrp_I have feelings of irritability", "userChoiceOneGrp_I am feeling angry", "userChoiceOneGrp_I have feelings of anger", "userChoiceOneGrp_I am easily annoyed", "userChoiceOneGrp_Feeling Angry", "userChoiceOneGrp_Feeling Annoyed", "userChoiceOneGrp_Feeling irritable", "userChoiceOneGrp_I am easily agitated", "userChoiceOneGrp_I am feeling moody", "userChoiceOneGrp_Feeling Moody", "userChoiceOneGrp_Feeling tetchy", "userChoiceOneGrp_I am feeling tetchy", "userChoiceOneGrp_I am feeling grumpy", "userChoiceOneGrp_Feeling grumpy", "userChoiceOneGrp_I am feeling hateful", "userChoiceOneGrp_Feeling hateful", "userChoiceOneGrp_Rages", "userChoiceOneGrp_I have been experiencing rages", "userChoiceOneGrp_I have experienced increased temper", "userChoiceOneGrp_I have feelings of temper", "userChoiceOneGrp_Increased temper", "userChoiceOneGrp_Increased anger", "userChoiceOneGrp_I have experienced increased anger"
+         ],
+         "responses": ["It is important to conduct breathing exercises and mindful exercises/thoughts regarding how everybody including your student/peers and even your fellow tutors are in the same boat regarding the hardships regarding the lockdowns/restrictions. Try conversing with your friends/tutors over social media or your microsoft teams account and you will see that we are all finding it difficult during the epidemic. We can all make it through this :) Do you also want additional support regarding some of our professional help/guidance?"],
+         "context_set": "mentalSymptom_Anger_&_Irritability",
+          "context_filter": "symptomMentalOrPhysical",
+          "intent": "mntAngrIrit_"
+        },
+        {"tag": "mentalSymptom_Anger_&_Irritability2_ConsentYes",
+         "patterns": ["mntAngrIrit_yes", "mntAngrIrit_oh yes", "mntAngrIrit_sure"],
+         "responses": ["Did you know that acceptance and commitment therapy is available to help you overcome fears/anxieties/angers regarding uncontrollable situations/circumstances? Cardiff Mets wellbeing team can provide such guidance! Would you like us to redirect you to the wellbeing team website?"],
+         "context_set": "mentalSymptom_Anger_&_Irritability2",
+          "context_filter": "mentalSymptom_Anger_&_Irritability",
+          "intent": "mntAngrIrit2_"
+        },
+        {"tag": "mentalSymptom_Anger_&_Irritability2_ConsentNo",
+         "patterns": ["mntAngrIrit_no", "mntAngrIrit_oh no", "mntAngrIrit_nope"],
+         "responses": ["Thats fine! I hope our Self-Management Advice makes your experience at university a lot more manageable"],
+         "context_filter": "mentalSymptom_Anger_&_Irritability"
+        },
+        {"tag": "mentalSymptom_Anger_&_Irritability3_ConsentYes",
+         "patterns": ["mntAngrIrit2_yes", "mntAngrIrit2_oh yes", "mntAngrIrit2_sure"],
+         "responses": ["Hope you feel better soon!"],
+          "context_filter": "mentalSymptom_Anger_&_Irritability2",
+          "web": "https://www.cardiffmet.ac.uk/study/studentservices/wellbeing-service/Pages/Mental-health-and-wellbeing.aspx"
+        },
+        {"tag": "mentalSymptom_Anger_&_Irritability3_ConsentNo",
+         "patterns": ["mntAngrIrit2_no", "mntAngrIrit2_oh no", "mntAngrIrit2_nope"],
+         "responses": ["Thats Ok! Hope you feel better soon!"],
+         "context_filter": "mentalSymptom_Anger_&_Irritability2"
+        },
+
+
+
+        {"tag": "mentalSymptom_Dissatisfaction_&_Pessimism_&_Confusion",
+         "patterns": ["userChoiceOneGrp_I am feeling dissatisfied", "userChoiceOneGrp_Feelings of dissatisfaction", "userChoiceOneGrp_I am feeling unsatisfied", "userChoiceOneGrp_I dont feel satisfied", "userChoiceOneGrp_I feel dissatisfied", "userChoiceOneGrp_I feel disappointed", "userChoiceOneGrp_Disappointment", "userChoiceOneGrp_Feelings of disappointment", "userChoiceOneGrp_I am feeling unfulfilled", "userChoiceOneGrp_I am feeling dissatisfied with university", "userChoiceOneGrp_I am feeling dissatisfied with my course", "userChoiceOneGrp_I am feeling dissatisfied with my module", "userChoiceOneGrp_I am feeling dissatisfied with my education", "userChoiceOneGrp_dissatisfied", "userChoiceOneGrp_dissatisfaction",
+         "userChoiceOneGrp_I am feeling pessimistic", "userChoiceOneGrp_Feelings of pessimism", "userChoiceOneGrp_I am feeling pessimistic towards the future", "userChoiceOneGrp_Feelings of pessimism towards the future", "userChoiceOneGrp_I am thinking things will go wrong", "userChoiceOneGrp_I am thinking things will go wrong in the future", "userChoiceOneGrp_I am scared of the future", "userChoiceOneGrp_I am feeling scared of the future", "userChoiceOneGrp_I am scared of the future of the lockdowns", "userChoiceOneGrp_I am scared of the future of the lockdown", "userChoiceOneGrp_I am expecting the worst from the future", "userChoiceOneGrp_I am feeling negative", "userChoiceOneGrp_I am feeling negative thoughts", "userChoiceOneGrp_pessimistic", "userChoiceOneGrp_pessimism", "userChoiceOneGrp_Fearful of the future", "userChoiceOneGrp_I have dreadful thoughts of the future", "userChoiceOneGrp_I have scary thoughts of the future",
+           "userChoiceOneGrp_I am feeling confused", "userChoiceOneGrp_I am feeling uncertain", "userChoiceOneGrp_confused", "userChoiceOneGrp_uncertain", "userChoiceOneGrp_I am having feelings of confusion", "userChoiceOneGrp_I am having feelings of Uncertainty", "userChoiceOneGrp_I am feeling unsure", "userChoiceOneGrp_unsure", "userChoiceOneGrp_muddled", "userChoiceOneGrp_muddled thoughts", "userChoiceOneGrp_I am feeling muddled", "userChoiceOneGrp_indecision", "userChoiceOneGrp_I have feelings of indecision", "userChoiceOneGrp_I cannot make a decision", "userChoiceOneGrp_Hard to make a decision", "userChoiceOneGrp_I find it difficult to make a decision", "userChoiceOneGrp_confusion"
+         ],
+         "responses": ["It is advised to research governmental reports as coronavirus restrictions/changes to day-to-day life are still going to be in effect for the foreseeable future. Thus, the wellbeing team has advised that students plan/structure their positive experiences with their dissatisfactions/pessimisms as to conclude if they want to continue on this year and/or take a year out to reduce their anxieties until restrictions are loosened as for some of the students at Cardiff Met then this option provided better mental functionality and potentially better grades. Therefore, via the help from the wellbeing team, the wellbeing team can provide personal guidance/suggestions on how to overcome such dissatisfactions/pessimisms and guide you on what you should do next. Would you like to be redirected to the wellbeing team website?"],
+         "context_set": "mentalSymptom_Dissatisfaction_&_Pessimism",
+          "context_filter": "symptomMentalOrPhysical",
+          "intent": "mntDisPess_"
+        },
+        {"tag": "mentalSymptom_Dissatisfaction_&_Pessimism_&_Confusion2_ConsentYes",
+         "patterns": ["mntDisPess_yes", "mntDisPess_oh yes", "mntDisPess_sure"],
+         "responses": ["Did you know that all students of Cardiff-Met have been assigned a personal tutor in which will support your time at university! You can even inquire about your course/module related confusions! Would you like us to redirect you to the Personal Tutor Portal so you can book an appointment?"],
+          "context_set": "mentalSymptom_Dissatisfaction_&_Pessimism2",
+          "context_filter": "mentalSymptom_Dissatisfaction_&_Pessimism",
+          "intent": "mntDisPess2_",
+          "web": "https://www.cardiffmet.ac.uk/study/studentservices/wellbeing-service/Pages/Mental-health-and-wellbeing.aspx"
+        },
+        {"tag": "mentalSymptom_Dissatisfaction_&_Pessimism_&_Confusion2_ConsentNo",
+         "patterns": ["mntDisPess_no", "mntDisPess_oh no", "mntDisPess_nope"],
+         "responses": ["Thats ok! However, Did you know that all students of Cardiff-Met have been assigned a personal tutor in which will support your time at university! You can even inquire about your course/module related confusions! Would you like us to redirect you to the Personal Tutor Portal so you can book an appointment? "],
+          "context_set": "mentalSymptom_Dissatisfaction_&_Pessimism2",
+          "intent": "mntDisPess2_",
+          "context_filter": "mentalSymptom_Dissatisfaction_&_Pessimism"
+        },
+        {"tag": "mentalSymptom_Dissatisfaction_&_Pessimism_&_Confusion3_ConsentYes",
+         "patterns": ["mntDisPess2_yes", "mntDisPess2_oh yes", "mntDisPess2_sure"],
+         "responses": ["Hope you feel better soon!"],
+          "context_filter": "mentalSymptom_Dissatisfaction_&_Pessimism2",
+          "web": "https://cis.cardiffmet.ac.uk/personaltutor/"
+        },
+        {"tag": "mentalSymptom_Dissatisfaction_&_Pessimism_&_Confusion3_ConsentNo",
+         "patterns": ["mntDisPess2_no", "mntDisPess2_oh no", "mntDisPess2_nope"],
+         "responses": ["Thats Ok! Hope you feel better soon!"],
+          "context_filter": "mentalSymptom_Dissatisfaction_&_Pessimism2"
+        },
+
+
+
+        {"tag": "physicalSymptom_MediumRisk",
+         "patterns": ["userChoiceOneGrp_Feelings of being startled easily", "userChoiceOneGrp_Startled", "userChoiceOneGrp_Feeling easily startled", "userChoiceOneGrp_Easily Startled", "userChoiceOneGrp_I am feeling alert", "userChoiceOneGrp_I am feeling overly alert", "userChoiceOneGrp_I am feeling jumpy", "userChoiceOneGrp_Feeling Alarmed", "userChoiceOneGrp_Feeling Easily Alarmed", "userChoiceOneGrp_Alarmed", "userChoiceOneGrp_Alert", "userChoiceOneGrp_Jumpy", "userChoiceOneGrp_Difficult to stop shaking",
+         "userChoiceOneGrp_I am feeling shaky", "userChoiceOneGrp_I am trembling", "userChoiceOneGrp_I am trembling", "userChoiceOneGrp_I am shaking", "userChoiceOneGrp_Shaking", "userChoiceOneGrp_Shivering", "userChoiceOneGrp_I am shivering", "userChoiceOneGrp_Shivers", "userChoiceOneGrp_I am getting the shivers", "userChoiceOneGrp_I am having body tremors", "userChoiceOneGrp_Trembling", "userChoiceOneGrp_I physically shake", "userChoiceOneGrp_I physically tremble", "userChoiceOneGrp_I am shaking all the time", "userChoiceOneGrp_shake", "userChoiceOneGrp_tremble", "userChoiceOneGrp_shaking",
+         "userChoiceOneGrp_Feeling Dizzy", "userChoiceOneGrp_Feeling light headedness", "userChoiceOneGrp_Feeling light headed", "userChoiceOneGrp_I have feelings of dizziness", "userChoiceOneGrp_I am feeling dizzy", "userChoiceOneGrp_I am feeling faint", "userChoiceOneGrp_Feeling faint", "userChoiceOneGrp_Faintness", "userChoiceOneGrp_Feelings of faintness", "userChoiceOneGrp_Dizzy", "userChoiceOneGrp_Dizziness", "userChoiceOneGrp_Light headed", "userChoiceOneGrp_faint", "userChoiceOneGrp_light headedness", "userChoiceOneGrp_lightheadedness", "userChoiceOneGrp_my head is spinning", "userChoiceOneGrp_I am feeling light-headed",
+           "userChoiceOneGrp_Feelings of Nausea", "userChoiceOneGrp_Feeling sick", "userChoiceOneGrp_Feeling nauseous", "userChoiceOneGrp_Feeling ill", "userChoiceOneGrp_Feeling unwell", "userChoiceOneGrp_I feel sick", "userChoiceOneGrp_I feel nauseous", "userChoiceOneGrp_Feelings of sickness", "userChoiceOneGrp_Sickness", "userChoiceOneGrp_Sick", "userChoiceOneGrp_nausea", "userChoiceOneGrp_nauseous", "userChoiceOneGrp_I am feeling sick", "userChoiceOneGrp_I am feeling unwell", "userChoiceOneGrp_I am feeling ill", "userChoiceOneGrp_I am feeling nauseous",
+           "userChoiceOneGrp_Aching Muscles", "userChoiceOneGrp_Aches And Pains", "userChoiceOneGrp_Muscle Cramps", "userChoiceOneGrp_I have sore muscles", "userChoiceOneGrp_I have aches and pains", "userChoiceOneGrp_My muscles ache", "userChoiceOneGrp_My muscles are aching", "userChoiceOneGrp_Sore Muscles", "userChoiceOneGrp_I am having difficultly with my muscles",
+           "userChoiceOneGrp_Hot Spells", "userChoiceOneGrp_Cold Spells", "userChoiceOneGrp_Feeling Hot", "userChoiceOneGrp_Feeling Cold", "userChoiceOneGrp_I have feelings of being hot", "userChoiceOneGrp_I have feelings of being cold", "userChoiceOneGrp_Hot Flush", "userChoiceOneGrp_Hot Flushes", "userChoiceOneGrp_Feelings of coldness", "userChoiceOneGrp_Feelings of hotness", "userChoiceOneGrp_Feelings of heat", "userChoiceOneGrp_Feelings of cold shivers", "userChoiceOneGrp_I have hot spells", "userChoiceOneGrp_I have cold spells", "userChoiceOneGrp_I have feelings of hot spells", "userChoiceOneGrp_I have feelings of cold spells", "userChoiceOneGrp_I am feeling hot", "userChoiceOneGrp_I am feeling cold",
+           "userChoiceOneGrp_I cannot sleep", "userChoiceOneGrp_Failing to sleep", "userChoiceOneGrp_I cannot fall asleep", "userChoiceOneGrp_Failing to fall asleep", "userChoiceOneGrp_Failing to fall asleep"
+         ],
+         "responses": ["It is heavily advised that you meet with a member of the wellbeing team as a means to discuss your anxieties and symptom triggers in a professional and understanding environment as the physical symptoms you have specified that your state of anxiety has indicated that you may be suffering from a higher anxiety disorder in which is beyond the capabilities of the chatbot and indicates you may not be functioning/managing your stress/anxieties without the utilisation of professional help. Do you want me to redirect you to the wellbeing teams appointment page as to allow you to book an appointment with a member of the wellbeing team?"],
+         "context_set": "physicalSymptom_MediumRisk",
+          "context_filter": "symptomMentalOrPhysical",
+          "intent": "physSymp_medRsk_"
+        },
+        {"tag": "physicalSymptom_MediumRisk2_ConsentYes",
+         "patterns": ["physSymp_medRsk_yes", "physSymp_medRsk_oh yes", "physSymp_medRsk_sure"],
+         "responses": ["It is also important to consider partaking in mindful exercises such as body scans as to provide some pre-substitute anxiety management as to help ground/calm you back to normality before your meetup with a professional. Partake in breathing exercises whilst meditating on the actions of your physical/mental self. Try to meditate on every sensation, emotion or distress and try to bring an open/ discerning attention to such feelings and emotions. You will be ok"],
+          "context_filter": "physicalSymptom_MediumRisk",
+          "web": "https://www.cardiffmet.ac.uk/study/studentservices/wellbeing-service/Pages/Home.aspx"
+        },
+        {"tag": "physicalSymptom_MediumRisk2_ConsentNo",
+         "patterns": ["physSymp_medRsk_no", "physSymp_medRsk_oh no", "physSymp_medRsk_nope"],
+         "responses": ["Thats ok! However, It is also important to consider partaking in mindful exercises such as body scans as to provide some pre-substitute anxiety management as to help ground/calm you back to normality before your meetup with a professional. Partake in breathing exercises whilst meditating on the actions of your physical/mental self. Try to meditate on every sensation, emotion or distress and try to bring an open/ discerning attention to such feelings and emotions. You will be ok"],
+          "context_filter": "physicalSymptom_MediumRisk"
+        },
+
+
+        {"tag": "physicalSymptom_HighRisk",
+         "patterns": ["userChoiceOneGrp_Out of breath", "userChoiceOneGrp_Feeling out of breath", "userChoiceOneGrp_Short of breath", "userChoiceOneGrp_Shortness of breath", "userChoiceOneGrp_I am finding it hard to breathe", "userChoiceOneGrp_Hard to breathe", "userChoiceOneGrp_Finding it hard to breathe", "userChoiceOneGrp_Finding it hard to breathe", "userChoiceOneGrp_Hard to catch my breath", "userChoiceOneGrp_Finding it hard to catch my breath", "userChoiceOneGrp_Difficult to breathe", "userChoiceOneGrp_I am Finding it difficult to breathe", "userChoiceOneGrp_Finding it difficult to breathe", "userChoiceOneGrp_Cannot control breathing", "userChoiceOneGrp_I am finding it hard to control breathing", "userChoiceOneGrp_I am feeling out of breath", "userChoiceOneGrp_I have problems regulating breathing",
+         "userChoiceOneGrp_I have chest pain", "userChoiceOneGrp_Feelings of chest pains", "userChoiceOneGrp_My chest hurts", "userChoiceOneGrp_My chest aches", "userChoiceOneGrp_chest ache", "userChoiceOneGrp_I am experiencing chest pains", "userChoiceOneGrp_Pains in my chest", "userChoiceOneGrp_I am feeling chest pain", "userChoiceOneGrp_I got a pain in my chest", "userChoiceOneGrp_Ive got a pain in my chest", "userChoiceOneGrp_Chest Tightness", "userChoiceOneGrp_I am having Chest Tightness", "userChoiceOneGrp_Tightness In My Chest", "userChoiceOneGrp_I am feeling pains in my chest", "userChoiceOneGrp_Chest Pain",
+           "userChoiceOneGrp_I have heart palpitations", "userChoiceOneGrp_I am having palpitations", "userChoiceOneGrp_My heart is racing", "userChoiceOneGrp_Racing Heart", "userChoiceOneGrp_Racing Heart Beat", "userChoiceOneGrp_Fast Heart Beats", "userChoiceOneGrp_Fast Heart Rates", "userChoiceOneGrp_My heart feelings like it is beating too fast", "userChoiceOneGrp_My heart feelings like it is beating too Quickly", "userChoiceOneGrp_Rapid heart rate", "userChoiceOneGrp_My heart hurts", "userChoiceOneGrp_Heart Pains", "userChoiceOneGrp_Heart Pain", "userChoiceOneGrp_I am feeling heart pains", "userChoiceOneGrp_I am feeling rapid heart rates", "userChoiceOneGrp_I am feeling rapid heart beats", "userChoiceOneGrp_heartbeat", "userChoiceOneGrp_heartbeats", "userChoiceOneGrp_I have been experiencing heart pains",
+           "userChoiceOneGrp_I am finding it hard to swallow", "userChoiceOneGrp_Difficulty Swallowing", "userChoiceOneGrp_I am having Difficulty Swallowing", "userChoiceOneGrp_I cannot swallow", "userChoiceOneGrp_Hard to swallow", "userChoiceOneGrp_I cannot cope" , "userChoiceOneGrp_I cannot cope with life" , "userChoiceOneGrp_I cannot cope with life anymore",
+           "userChoiceOneGrp_I have had feelings similar to a panic attack", "userChoiceOneGrp_I have had a panic attack", "userChoiceOneGrp_I have had a panic attack", "userChoiceOneGrp_panic attack", "userChoiceOneGrp_I think I may be suffering from a panic attack", "userChoiceOneGrp_I have had feelings similar to a anxiety attack", "userChoiceOneGrp_I have had a anxiety attack", "userChoiceOneGrp_I have had a anxiety attack", "userChoiceOneGrp_anxiety attack", "userChoiceOneGrp_I think I may be suffering from a anxiety attack"
+         ],
+         "responses": ["It is heavily advised that you meet with your local GP, Hospital and/or psychiatrist as soon as possible due to the nature of your anxiety symptoms specifying that you could be experiencing a severe anxiety mental disorder in which such symptoms could indicate that you could be on a verge of a panic attack. They will discuss about your current symptoms as to conclude what treatment/therapy will be most appropriate such as talking therapys and/or Psychological therapies such as cognitive behavioural therapy. This is extremely important to consider as failure to manage such issues can result in the panic disorder escalating beyond control in which can result in worsening mental state and/or even suicidal thoughts. Do you want us to redirect you to the NHS for more professional guidance and signpostings?"],
+         "context_set": "physicalSymptom_HighRisk",
+          "context_filter": "symptomMentalOrPhysical",
+          "intent": "physSymp_hghRisk_"
+        },
+        {"tag": "physicalSymptom_HighRisk2_ConsentYes",
+         "patterns": ["physSymp_hghRisk_yes", "physSymp_hghRisk_oh yes", "physSymp_hghRisk_sure"],
+         "responses": ["It is also important to consider partaking in mindful exercises such as body scans as to provide some pre-substitute anxiety management as to help ground/calm you back to normality before your meetup with a professional. Partake in breathing exercises whilst meditating on the actions of your physical/mental self. Try to meditate on every sensation, emotion or distress and try to bring an open/ discerning attention to such feelings and emotions. <br/><br/> However, it is also recommended to utilise out semi-anonymized emailing service as to inform the wellbeing team about your current conditions as to provide a more direct/quicker response to professional help as to guide you to more direct help and guidance. Would you like us to send the wellbeing team a copy of your specified anxieties as for them to contact you regarding your issues?"],
+         "context_set": "physicalSymptom_HighRisk2",
+          "context_filter": "physicalSymptom_HighRisk",
+          "web": "https://111.wales.nhs.uk/Panicdisorder/",
+          "intent": "physSymp_hghRisk2_"
+        },
+        {"tag": "physicalSymptom_HighRisk2_ConsentNo",
+         "patterns": ["physSymp_hghRisk_no", "physSymp_hghRisk_oh no", "physSymp_hghRisk_nope"],
+         "responses": ["Thats ok! However, It is also important to consider partaking in mindful exercises such as body scans as to provide some pre-substitute anxiety management as to help ground/calm you back to normality before your meetup with a professional. Partake in breathing exercises whilst meditating on the actions of your physical/mental self. Try to meditate on every sensation, emotion or distress and try to bring an open/ discerning attention to such feelings and emotions. <br/><br/> However, it is also recommended to utilise out semi-anonymized emailing service as to inform the wellbeing team about your current conditions as to provide a more direct/quicker response to professional help as to guide you to more direct help and guidance. Would you like us to send the wellbeing team a copy of your specified anxieties as for them to contact you regarding your issues?"],
+         "context_set": "physicalSymptom_HighRisk2",
+          "context_filter": "physicalSymptom_HighRisk",
+          "intent": "physSymp_hghRisk2_"
+        },
+        {"tag": "physicalSymptom_HighRisk3_ConsentYes",
+         "patterns": ["physSymp_hghRisk2_yes", "physSymp_hghRisk2_oh yes", "physSymp_hghRisk2_sure"],
+         "responses": ["Please Enter Your Student ID"],
+          "context_filter": "physicalSymptom_HighRisk2",
+          "email": ["william2242215@yahoo.co.uk"],
+          "symptom_type": "Physical",
+          "symptom_problem": "dangers of panic attacks and severe health implications"
+        },
+        {"tag": "physicalSymptom_HighRisk3_ConsentNo",
+         "patterns": ["physSymp_hghRisk2_no", "physSymp_hghRisk2_oh no", "physSymp_hghRisk2_nope"],
+         "responses": ["Thats Ok! Hope you feel better soon!"],
+          "context_filter": "physicalSymptom_HighRisk2"
+        },
+
+
+
+
+
+        {"tag": "fearGroup",
+         "patterns": ["Fear", "Fears", "Feelings of Fear", "Support My Fear", "Feelings of Fears"],
+         "responses": ["Please specify what you are most fearful of whilst at university during the Covid-19 Epidemic! I.E. 'I am scared that the new block system will affect my grades'"],
+         "context_set": "coronaFrs",
+          "intent": "usrChoiceTwoGroup_"
+        },
+
+
+
+        {"tag": "fear_Educational",
+         "patterns": ["usrChoiceTwoGroup_I have fears of Failing My Exam", "usrChoiceTwoGroup_Failing My Assignment", "usrChoiceTwoGroup_Assignments", "usrChoiceTwoGroup_Exams", "usrChoiceTwoGroup_University Work", "usrChoiceTwoGroup_failure", "usrChoiceTwoGroup_I am scared of my Academical Progress", "usrChoiceTwoGroup_Fears of my Academical Progress", "usrChoiceTwoGroup_Academical Progress", "usrChoiceTwoGroup_I have fears for my dissertation", "usrChoiceTwoGroup_Fears for my dissertation", "usrChoiceTwoGroup_Fears for my dissertation marks", "usrChoiceTwoGroup_Dissertation", "usrChoiceTwoGroup_Marks", "usrChoiceTwoGroup_Mark", "usrChoiceTwoGroup_Grade", "usrChoiceTwoGroup_Grades", "usrChoiceTwoGroup_I have fears that my grades will be affected", "usrChoiceTwoGroup_Fears that my marks will be affected", "usrChoiceTwoGroup_Grades will be affected", "usrChoiceTwoGroup_university work", "usrChoiceTwoGroup_assignment", "usrChoiceTwoGroup_I am fearful of assignments", "usrChoiceTwoGroup_I am scared of assignment", "usrChoiceTwoGroup_I am fearful of examinations", "usrChoiceTwoGroup_Scared of exams",  "usrChoiceTwoGroup_Scared of examination",  "usrChoiceTwoGroup_I am afraid I got bad marks", "usrChoiceTwoGroup_I am fearful of dissertation", "usrChoiceTwoGroup_Scared of dissertation", "usrChoiceTwoGroup_Scared of my dissertation",
+           "usrChoiceTwoGroup_I have fears of Falling Behind Online Class Material", "usrChoiceTwoGroup_I am afraid of falling behind on my Assignments", "usrChoiceTwoGroup_I am scared of falling behind on my University Work", "usrChoiceTwoGroup_I have fears of Falling Behind Online Classes", "usrChoiceTwoGroup_I have fears of Falling Behind Classes", "usrChoiceTwoGroup_Falling behind class", "usrChoiceTwoGroup_I have fears of falling behind on my studies", "usrChoiceTwoGroup_falling behind on my studies", "usrChoiceTwoGroup_falling behind",
+           "usrChoiceTwoGroup_I am afraid of New And Demanding Submission Dates", "usrChoiceTwoGroup_Im fearful of new submission dates", "usrChoiceTwoGroup_Im scared of submission dates", "usrChoiceTwoGroup_Fears of submission dates", "usrChoiceTwoGroup_I have fears of new assignment submission dates", "usrChoiceTwoGroup_I have fears of assignment submission dates", "usrChoiceTwoGroup_I have fears of dissertation submission dates", "usrChoiceTwoGroup_Fears of dissertation submission date", "usrChoiceTwoGroup_Fears of late submissions", "usrChoiceTwoGroup_I have fears of late submission", "usrChoiceTwoGroup_Fears of submitting assignment late", "usrChoiceTwoGroup_I have Fears of submitting my assignment late", "usrChoiceTwoGroup_submission date", "usrChoiceTwoGroup_submission dates", "usrChoiceTwoGroup_deadline", "usrChoiceTwoGroup_I have fears of assignment deadlines",
+           "usrChoiceTwoGroup_I am scared new course regulations", "usrChoiceTwoGroup_I have fears of the new university curriculum", "usrChoiceTwoGroup_Im scared of new module regulations", "usrChoiceTwoGroup_I have fears of new course changes", "usrChoiceTwoGroup_I have fears of new coursework changes", "usrChoiceTwoGroup_I have fears of new coursework changes", "usrChoiceTwoGroup_I have fears of new module changes", "usrChoiceTwoGroup_Fears of new course regulations", "usrChoiceTwoGroup_Fears of new module regulations", "usrChoiceTwoGroup_Fears of new course changes", "usrChoiceTwoGroup_Fears of new module changes", "usrChoiceTwoGroup_Course Regulations", "usrChoiceTwoGroup_Module Regulations", "usrChoiceTwoGroup_Course Changes", "usrChoiceTwoGroup_Module Changes", "usrChoiceTwoGroup_I am confused about Module Regulations", "usrChoiceTwoGroup_I am confused about Course changes", "usrChoiceTwoGroup_Confused about Module Changes", "usrChoiceTwoGroup_Confused about Course Changes", "usrChoiceTwoGroup_I am uncertain about Module Regulations", "usrChoiceTwoGroup_I am uncertain about Course changes", "usrChoiceTwoGroup_Uncertain about Module Changes", "usrChoiceTwoGroup_Uncertain about Course changes", "usrChoiceTwoGroup_I have fears of new educational system", "usrChoiceTwoGroup_Fears of new educational system", "usrChoiceTwoGroup_Educational System", "usrChoiceTwoGroup_Block System", "usrChoiceTwoGroup_I am confused about my assignment work during the coronavirus", "usrChoiceTwoGroup_The block teaching means you constantly have an assignment looming over your head",
+            "usrChoiceTwoGroup_Assignment Requirements", "usrChoiceTwoGroup_Exam Requirements", "usrChoiceTwoGroup_Dissertation Requirements", "usrChoiceTwoGroup_Module Requirements", "usrChoiceTwoGroup_Course Requirements", "usrChoiceTwoGroup_I have fears that I will miss out from practical modules", "usrChoiceTwoGroup_I cannot go to practical modules", "usrChoiceTwoGroup_no practical modules", "usrChoiceTwoGroup_I have fears of practical assignments", "usrChoiceTwoGroup_How am I supposed to complete practical assignments", "usrChoiceTwoGroup_I am scared that practical assignments will affect my grades", "usrChoiceTwoGroup_Lack of communication", "usrChoiceTwoGroup_I am fearful that lack of communication will affect my grades", "usrChoiceTwoGroup_I am scared that no communication will prevent me from completing my assignments", "usrChoiceTwoGroup_No communication has increased my fears of exams", "usrChoiceTwoGroup_I am fearful that less feedback will affect my grades", "usrChoiceTwoGroup_I have fears that less feedback will affect my grades", "usrChoiceTwoGroup_Scared that less feedback will affect my dissertation", "usrChoiceTwoGroup_less feedback will affect my dissertation grades"
+         ],
+         "responses": ["The new block/educational system has put a lot of strain on the students but due to the coronavirus then this is unlikely to change for the foreseeable future. Therefore, it is critical to conduct efficient time-management plans as to efficiently ensure you can incorporate personal time to participate in hobbies whilst conducting your studies and assignments as to prevent being overburdened/burned-out whilst ensuring that such assignments are completed on time as to reduce risks of anxiety whilst ensuring you get the mark you deserve. Would you like to know about some of the services available from the university?"],
+         "context_set": "fearEducational1",
+          "context_filter": "coronaFrs",
+          "intent": "uniFearedEducateCon1_"
+        },
+        {"tag": "fear_Educational2_ConsentYes",
+         "patterns": ["uniFearedEducateCon1_yes", "uniFearedEducateCon1_oh yes", "uniFearedEducateCon1_sure"],
+         "responses": ["Did you know that with Self Certification then you are able to apply for an extension without any proof? Would you like us to redirect you to the Self-Certification application page?"],
+         "context_set": "fearEducational2",
+          "context_filter": "fearEducational1",
+          "intent": "uniFearedEducateCon2_"
+        },
+        {"tag": "fear_Educational2_ConsentNo",
+         "patterns": ["uniFearedEducateCon1_no", "uniFearedEducateCon1_oh no", "uniFearedEducateCon1_nope"],
+         "responses": ["Thats fine! I hope our Self-Management Advice makes your experience at university a lot more manageable"],
+         "context_filter": "fearEducational1"
+        },
+        {"tag": "fear_Educational3_ConsentYes",
+         "patterns": ["uniFearedEducateCon2_yes", "uniFearedEducateCon2_oh yes", "uniFearedEducateCon2_sure"],
+         "responses": ["Did you know that all students of Cardiff-Met have been assigned a personal tutor in which will support your time at university! You can inquire about academic progress/achievements/guidance! Would you like us to redirect you to the Personal Tutor Portal so you can book an appointment?"],
+         "context_set": "fearEducational3",
+          "context_filter": "fearEducational2",
+          "web": "https://cis.cardiffmet.ac.uk/MitCircs/MitCircs/SCStudentDashboard",
+          "intent": "uniFearedEducateCon3_"
+        },
+        {"tag": "fear_Educational3_ConsentNo",
+         "patterns": ["uniFearedEducateCon2_no", "uniFearedEducateCon2_oh no", "uniFearedEducateCon2_nope"],
+         "responses": ["Thats Fine! However, Did you know that all students of Cardiff-Met have been assigned a personal tutor in which will support your time at university! You can inquire about academic progress/achievements/guidance! Would you like us to redirect you to the Personal Tutor Portal so you can book an appointment?"],
+         "context_set": "fearEducational3",
+          "context_filter": "fearEducational2",
+          "intent": "uniFearedEducateCon3_"
+        },
+        {"tag": "fear_Educational4_ConsentYes",
+         "patterns": ["uniFearedEducateCon3_yes", "uniFearedEducateCon3_oh yes", "uniFearedEducateCon3_sure"],
+         "responses": ["Did you know that to ensure no disadvantage, the exam boards will review module level performance to ensure that students are being assessed as comparable to the modules performance in previous academic years. If we find that a module is underperforming compared to previous years marks will be adjusted to ensure students do not perform worse than pre-pandemic cohorts"],
+         "context_filter": "fearEducational3",
+          "web": "https://cis.cardiffmet.ac.uk/personaltutor/"
+        },
+        {"tag": "fear_Educational4_ConsentNo",
+         "patterns": ["uniFearedEducateCon3_no", "uniFearedEducateCon3_oh no", "uniFearedEducateCon3_nope"],
+         "responses": ["Thats Ok! However, Did you know that to ensure no disadvantage, the exam boards will review module level performance to ensure that students are being assessed as comparable to the modules performance in previous academic years. If we find that a module is underperforming compared to previous years marks will be adjusted to ensure students do not perform worse than pre-pandemic cohorts"],
+         "context_filter": "fearEducational3"
+        },
+
+
+
+        {"tag": "fear_Finance",
+         "patterns": ["usrChoiceTwoGroup_I am afraid of Managing Student Finances", "usrChoiceTwoGroup_I have fears of not getting enough student finance", "usrChoiceTwoGroup_Fears of not getting enough student finance", "usrChoiceTwoGroup_I am fearful of student finance", "usrChoiceTwoGroup_Fears of student finance", "usrChoiceTwoGroup_I have fears of student finances", "usrChoiceTwoGroup_Fears of student finances", "usrChoiceTwoGroup_I have fears of student finance problems", "usrChoiceTwoGroup_Fearful of student finance problems", "usrChoiceTwoGroup_Fears of late student finances", "usrChoiceTwoGroup_Fears of late payments", "usrChoiceTwoGroup_I have fears of repaying student finances", "usrChoiceTwoGroup_Fears of repaying student finance", "usrChoiceTwoGroup_I have fears of student loans", "usrChoiceTwoGroup_Fears of student loans", "usrChoiceTwoGroup_Student loans", "usrChoiceTwoGroup_student finance", "usrChoiceTwoGroup_financial problems", "usrChoiceTwoGroup_financial difficulties", "usrChoiceTwoGroup_financial", "usrChoiceTwoGroup_finances", "usrChoiceTwoGroup_finance",
+         "usrChoiceTwoGroup_I have fears of Managing My Self Finance", "usrChoiceTwoGroup_I am afraid of getting in debt", "usrChoiceTwoGroup_Fears of getting in debt", "usrChoiceTwoGroup_Getting in debt", "usrChoiceTwoGroup_debt", "usrChoiceTwoGroup_I am scared of bill payments", "usrChoiceTwoGroup_Fears of bill payments", "usrChoiceTwoGroup_bill payments", "usrChoiceTwoGroup_I am scared of falling behind with bill payments", "usrChoiceTwoGroup_Fears of falling behind with bill payments", "usrChoiceTwoGroup_Falling behind with bill payments", "usrChoiceTwoGroup_bills", "usrChoiceTwoGroup_bill", "usrChoiceTwoGroup_rent", "usrChoiceTwoGroup_Fears of rent payment", "usrChoiceTwoGroup_I have fears of rent", "usrChoiceTwoGroup_I have fears of rent arrears", "usrChoiceTwoGroup_I have fears of arrears", "usrChoiceTwoGroup_arrears", "usrChoiceTwoGroup_I have fears of money problems", "usrChoiceTwoGroup_Fears of money problems", "usrChoiceTwoGroup_Fears of Money problems", "usrChoiceTwoGroup_Money", "usrChoiceTwoGroup_I cannot pay my bills", "usrChoiceTwoGroup_I cannot afford my rent",
+         "usrChoiceTwoGroup_I am fearful of a family members financial situation", "usrChoiceTwoGroup_I am scared of family finance", "usrChoiceTwoGroup_Fears of family member finances", "usrChoiceTwoGroup_Family money problems", "usrChoiceTwoGroup_I am fearful of my friends financial situation", "usrChoiceTwoGroup_Scared of friend finance", "usrChoiceTwoGroup_Fears of my friends finances", "usrChoiceTwoGroup_friend money problems"
+         ],
+         "responses": ["Did you know that the Cardiff Metropolitan Universities student services provides general student advice and support for financial issues regarding funding enquiries and advice regarding budgeting & Debt? It is highly advised that you book an appointment with your money and welfare advisor as a means to ensure that you are financially stable enough to live and cope during these uncertain times as a result of the epidemic! Gaining such finances can also help reduce financial strains for your family :). Do you want me to redirect you to student advice as for you to book an appointment with your money and welfare advisor?"],
+         "context_set": "fear_Finance1",
+          "context_filter": "coronaFrs",
+          "intent": "uniFearedFinaCon1_"
+        },
+        {"tag": "fear_Finance2_ConsentYes",
+         "patterns": ["uniFearedFinaCon1_yes", "uniFearedFinaCon1_oh yes", "uniFearedFinaCon1_sure"],
+         "responses": ["Did you know that the Cardiff Metropolitan University provides a lot of additional free funding support for students that are struggling with their finances before/during/after the coronavirus epidemic? The University provides services such as the student support fund as to support students whom are experiencing unexpected financial difficulties because of exceptional circumstances. Digital Learning support funding for students whom doesnt have the the technology/finances for online learning and even food vouchers. Do you want me to redirect you to the financing portal as to book for some of these opportunities?"],
+         "context_set": "fear_Finance2",
+          "context_filter": "fear_Finance1",
+          "web": "https://methub.cardiffmet.ac.uk/s/student-support/appointments/app/?workGroupIds=4232&siteId=4",
+          "intent": "uniFearedFinaCon2_"
+        },
+        {"tag": "fear_Finance2_ConsentNo",
+         "patterns": ["uniFearedFinaCon1_no", "uniFearedFinaCon1_oh no", "uniFearedFinaCon1_nope"],
+         "responses": ["Thats Fine! However, Did you know that the Cardiff Metropolitan University provides a lot of additional free funding support for students that are struggling with their finances before/during/after the coronavirus epidemic? The University provides services such as the student support fund as to support students whom are experiencing unexpected financial difficulties because of exceptional circumstances. Digital Learning support funding for students whom doesnt have the the technology/finances for online learning and even food vouchers. Do you want me to redirect you to the financing portal as to book for some of these opportunities?"],
+         "context_set": "fear_Finance2",
+          "context_filter": "fear_Finance1",
+          "intent": "uniFearedFinaCon2_"
+        },
+        {"tag": "fear_Finance3_ConsentYes",
+         "patterns": ["uniFearedFinaCon2_yes", "uniFearedFinaCon2_oh yes", "uniFearedFinaCon2_sure"],
+         "responses": ["Hope you feel better soon!"],
+         "context_filter": "fear_Finance2",
+          "web": "https://methub.cardiffmet.ac.uk/s/student-support"
+        },
+        {"tag": "fear_Finance3_ConsentNo",
+         "patterns": ["uniFearedFinaCon2_no", "uniFearedFinaCon2_oh no", "uniFearedFinaCon2_nope"],
+         "responses": ["Thats Ok! Hope you feel better soon!"],
+         "context_filter": "fear_Finance2"
+        },
+
+
+        {"tag": "fear_Occupation",
+         "patterns": ["usrChoiceTwoGroup_I am afraid of losing my job", "usrChoiceTwoGroup_Fears of losing my job", "usrChoiceTwoGroup_Fears of job loss", "usrChoiceTwoGroup_I have fears of losing my Employment", "usrChoiceTwoGroup_Fears of losing my Employment", "usrChoiceTwoGroup_I am scared of Employment loss", "usrChoiceTwoGroup_Fears that my workplace will close", "usrChoiceTwoGroup_Fears that my workplace will close down", "usrChoiceTwoGroup_Closure of workplace", "usrChoiceTwoGroup_Fears that my job will close down", "usrChoiceTwoGroup_Closure of job", "usrChoiceTwoGroup_Closure of work", "usrChoiceTwoGroup_Employment Loss", "usrChoiceTwoGroup_Job Loss", "usrChoiceTwoGroup_Employment", "usrChoiceTwoGroup_Job", "usrChoiceTwoGroup_Unemployment", "usrChoiceTwoGroup_I have fears of Unemployment", "usrChoiceTwoGroup_Fears of Unemployment", "usrChoiceTwoGroup_I have fears of redundancy", "usrChoiceTwoGroup_Fears of redundancy", "usrChoiceTwoGroup_I have fears of being made redundant ", "usrChoiceTwoGroup_Being made redundant", "usrChoiceTwoGroup_redundancy", "usrChoiceTwoGroup_redundant",
+           "usrChoiceTwoGroup_I am fearful of my future occupation", "usrChoiceTwoGroup_I am afraid of Loss in occupation opportunity", "usrChoiceTwoGroup_I have fears of not getting a job", "usrChoiceTwoGroup_Fears of not getting a job", "usrChoiceTwoGroup_Not getting a job", "usrChoiceTwoGroup_Not getting a job", "usrChoiceTwoGroup_Fears of not getting work experience", "usrChoiceTwoGroup_work experience", "usrChoiceTwoGroup_Fears of not getting employment", "usrChoiceTwoGroup_Not getting employment", "usrChoiceTwoGroup_I am scared that I cannot find work", "usrChoiceTwoGroup_wont be able to find a job", "usrChoiceTwoGroup_wont be able to find work", "usrChoiceTwoGroup_wont be able to find work after the coronavirus", "usrChoiceTwoGroup_may lose my work during the coronavirus"
+         ],
+         "responses": ["Did you know that the Cardiff Metropolitan Universities self service team has a career service as to help students solidify their chances on finding occupational opportunities for work experience, part/full time work? The service is designed to help students solidify their career skills by guiding students through the many stages on how to stand out to potential employers be it by enhancing their CV/Application-forms, interview skills or their presence over social media such as LinkedIn. The careers service will also help/guide you on finding occupations suited to your skills/preferences and provides multiple advertisements to potential occupations available on the day? Do you want me to redirect you to the careers service webpage as to book an appointment?"],
+         "context_set": "fear_Occupation1",
+          "context_filter": "coronaFrs",
+          "intent": "uniOccuFinCon1_"
+        },
+        {"tag": "fear_Occupation2_ConsentYes",
+         "patterns": ["uniOccuFinCon1_yes", "uniOccuFinCon1_oh yes", "uniOccuFinCon1_sure"],
+         "responses": ["Did you know that Cardiff Metropolitan Universities careers and entrepreneurship page advertises multitudes of occupational opportunities from internships/work-experience to part-time/full-time work? With this service then you are almost certain to find an occupation with your desired career choice/path. Do you want me to redirect you to the careers and entrepreneurship page?"],
+          "context_set": "fear_Occupation2",
+          "context_filter": "fear_Occupation1",
+          "web": "https://methub.cardiffmet.ac.uk/s/careers-entrepreneurship/appointments/app/?workGroupIds=4231&siteId=2",
+          "intent": "uniOccuFinCon2_"
+        },
+        {"tag": "fear_Occupation2_ConsentNo",
+         "patterns": ["uniOccuFinCon1_no", "uniOccuFinCon1_oh no", "uniOccuFinCon1_nope"],
+         "responses": ["Thats Fine! However, Did you know that Cardiff Metropolitan Universities careers and entrepreneurship page advertises multitudes of occupational opportunities from internships/work-experience to part-time/full-time work? With this service then you are almost certain to find an occupation with your desired career choice/path. Do you want me to redirect you to the careers and entrepreneurship page?"],
+          "context_set": "fear_Occupation2",
+          "context_filter": "fear_Occupation1",
+          "intent": "uniOccuFinCon2_"
+        },
+        {"tag": "fear_Occupation3_ConsentYes",
+         "patterns": ["uniOccuFinCon2_yes", "uniOccuFinCon2_oh yes", "uniOccuFinCon2_sure"],
+         "responses": ["It is important to ensure to keep calm and collected during these trying times as everybody has been affected by the occupational hardships resulting from the epidemic. However, due to this then it is important to ensure that you manage/enhance your presentability/application skills as to ensure you stand out from the majority and increase your occupational chances. Additionally, participating on online courses/modules as to shatter knowledge gaps, not only allowing for you to stand out more to potential employers but also as a means to keep your brain active as to reduce stress/boredom."],
+          "context_filter": "fear_Occupation2",
+          "web": "https://methub.cardiffmet.ac.uk/s/careers-entrepreneurship"
+        },
+        {"tag": "fear_Occupation3_ConsentNo",
+         "patterns": ["uniOccuFinCon2_no", "uniOccuFinCon2_oh no", "uniOccuFinCon1_nope"],
+         "responses": ["Thats Fine! However, It is important to ensure to keep calm and collected during these trying times as everybody has been affected by the occupational hardships resulting from the epidemic. However, due to this then it is important to ensure that you manage/enhance your presentability/application skills as to ensure you stand out from the majority and increase your occupational chances. Additionally, participating on online courses/modules as to shatter knowledge gaps, not only allowing for you to stand out more to potential employers but also as a means to keep your brain active as to reduce stress/boredom."],
+          "context_filter": "fear_Occupation2"
+        },
+
+      {"tag": "fear_HavingVirus",
+         "patterns": ["usrChoiceTwoGroup_Im afraid of getting virus", "usrChoiceTwoGroup_Fears that I have the virus", "usrChoiceTwoGroup_Fears that I contracted the virus", "usrChoiceTwoGroup_I think I have the symptoms of the virus", "usrChoiceTwoGroup_Im afraid I have the virus", "usrChoiceTwoGroup_I think I am infected with the virus", "usrChoiceTwoGroup_Having the virus", "usrChoiceTwoGroup_contracting the virus", "usrChoiceTwoGroup_I have fears that I have covid-19", "usrChoiceTwoGroup_Fears that I have covid-19", "usrChoiceTwoGroup_Fears that I contracted covid-19", "usrChoiceTwoGroup_I think I have the symptoms of covid-19", "usrChoiceTwoGroup_I think I have got covid-19", "usrChoiceTwoGroup_I think I am infected with covid-19", "usrChoiceTwoGroup_Having covid-19", "usrChoiceTwoGroup_contracting covid-19", "usrChoiceTwoGroup_I have fears that I have covid 19", "usrChoiceTwoGroup_Fears that I have covid 19", "usrChoiceTwoGroup_Fears that I contracted covid 19", "usrChoiceTwoGroup_I think I have the symptoms of covid 19", "usrChoiceTwoGroup_I think I have covid 19", "usrChoiceTwoGroup_I think I am infected with covid 19", "usrChoiceTwoGroup_Having covid 19", "usrChoiceTwoGroup_contracting covid 19", "usrChoiceTwoGroup_I have fears that I have the coronavirus", "usrChoiceTwoGroup_Fears that I have the coronavirus", "usrChoiceTwoGroup_Fears that I contracted the coronavirus", "usrChoiceTwoGroup_I think I have the symptoms the coronavirus", "usrChoiceTwoGroup_I think I have the coronavirus", "usrChoiceTwoGroup_I think I am infected with the coronavirus ", "usrChoiceTwoGroup_Having the coronavirus", "usrChoiceTwoGroup_contracting the coronavirus", "usrChoiceTwoGroup_I think I am infected",
+         "usrChoiceTwoGroup_Im afraid of that a family member has the virus", "usrChoiceTwoGroup_I am scared that family has coronavirus", "usrChoiceTwoGroup_has covid", "usrChoiceTwoGroup_may have covid 19", "usrChoiceTwoGroup_Im afraid of that my friend has the virus", "usrChoiceTwoGroup_I am fearful of that a friend could have coronavirus", "usrChoiceTwoGroup_I think a family member may have the coronavirus", "usrChoiceTwoGroup_I am fearful that one of my relatives may have the virus", "usrChoiceTwoGroup_I am scared a relative has the virus",  "usrChoiceTwoGroup_I am scared a relative has the coronavirus", "usrChoiceTwoGroup_I think a relative has covid"
+         ],
+          "responses": ["It is heavily advised to take a deep breath and avoid researching social media related articles or unprofessional/peer-reviewed articles/reports as multitudes of these articles are full of dubious and/or blatantly falsified advise/guidance in which could exacerbate such fears and even induce states of hypochondria. Therefore, it is advised to only research NHS and/or governmental articles/reports. Do you want me to redirect you to the NHS self-assessment for covid-19?"],
+         "context_set": "fear_Virus1",
+          "context_filter": "coronaFrs",
+          "intent": "uniFearedHavVirCon1_"
+        },
+        {"tag": "fear_HavingVirus2_ConsentYes",
+         "patterns": ["uniFearedHavVirCon1_yes", "uniFearedHavVirCon1_oh yes", "uniFearedHavVirCon1_sure"],
+         "responses": ["If you are seriously concerned about your health then it is also advised to participate in breathing exercises and refrain from continuously researching covid-19 related news as the constant doom and gloom from the media can put a damper on anybodys day. Take some time to converse with your family and friends about your worries and/or participate in hobbies as to keep your mind at ease and remember that you are not alone. We are all in the same boat and we will make it through this."],
+          "context_filter": "fear_Virus1",
+          "web": "https://111.wales.nhs.uk/SelfAssessments/symptomcheckers/COVID19.aspx"
+        },
+        {"tag": "fear_HavingVirus2_ConsentNo",
+         "patterns": ["uniFearedHavVirCon1_no", "uniFearedHavVirCon1_oh no", "uniFearedHavVirCon1_nope"],
+         "responses": ["Thats Fine! However, If you are seriously concerned about your health then it is also advised to participate in breathing exercises and refrain from continuously researching covid-19 related news as the constant doom and gloom from the media can put a damper on anybodys day. Take some time to converse with your family and friends about your worries and/or participate in hobbies as to keep your mind at ease and remember that you are not alone. We are all in the same boat and we will make it through this."],
+          "context_filter": "fear_Virus1"
+        },
+        {"tag": "fear_Future",
+         "patterns": ["usrChoiceTwoGroup_Future tester"],
+         "responses": ["It is heavily advised to take a deep breath and avoid researching social media related articles or unprofessional/peer-reviewed articles/reports as multitudes of these articles are full of dubious and/or blatantly falsified reports. In actuality, the future is looking quite positive as lockdowns are starting to ease and the vaccinations are rolling out at an efficient rate. Things are truly looking like we have almost made it to the other side of these few dubious/confusing/scary years. Stay safe, be sensible, we will make it through this. Do you want me to redirect you to a hopefull article regarding the future of the epidemic?"],
+         "context_set": "fear_Future1",
+          "context_filter": "coronaFrs",
+          "intent": "uniTheFutEpeCon1_"
+        },
+        {"tag": "fear_Future2_ConsentYes",
+         "patterns": ["uniTheFutEpeCon1_yes", "uniTheFutEpeCon1_oh yes", "uniTheFutEpeCon1_sure"],
+         "responses": ["If you are still concerned regarding the future of the epidemic/lockdowns/restrictions then it is advised to refrain from continuously researching covid-19 related news and the medias tendency to fluctuate from hopefulness to doom and gloom can put a damper on anybodys day. Take some time to converse with your family and friends about your worries and/or participate in hobbies as to keep your mind at ease and remember that you are not alone. We are all in the same boat and we will make it through this."],
+          "context_filter": "fear_Future1",
+          "web": "https://www.bbc.co.uk/news/uk-56469092"
+        },
+        {"tag": "fear_Future2_ConsentNo",
+         "patterns": ["uniTheFutEpeCon1_no", "uniTheFutEpeCon1_oh no", "uniTheFutEpeCon1_nope"],
+         "responses": ["Thats Fine! However, If you are still concerned regarding the future of the epidemic/lockdowns/restrictions then it is advised to refrain from continuously researching covid-19 related news and the medias tendency to fluctuate from hopefulness to doom and gloom can put a damper on anybodys day. Take some time to converse with your family and friends on social media about your worries and/or participate in hobbies as to keep your mind at ease and remember that you are not alone. We are all in the same boat and we will make it through this."],
+          "context_filter": "fear_Future1"
+        },
+
+      {"tag": "fear_Future",
+         "patterns": ["usrChoiceTwoGroup_I have fears of the future of the pandemic", "usrChoiceTwoGroup_Scared of the future of the pandemic", "usrChoiceTwoGroup_I have fears of how long the pandemic will go on for", "usrChoiceTwoGroup_I am scared of when the pandemic will end", "usrChoiceTwoGroup_Fears of when the pandemic will end", "usrChoiceTwoGroup_Scared for economy after lockdown", "usrChoiceTwoGroup_Fears of economy after pandemic", "usrChoiceTwoGroup_I have fears of economy after lockdown", "usrChoiceTwoGroup_I have fears of how long the lockdown will go on for", "usrChoiceTwoGroup_I am scared of when the lockdowns will end", "usrChoiceTwoGroup_I have fears of the future of the lockdown", "usrChoiceTwoGroup_Scared of the future of the lockdown", "usrChoiceTwoGroup_I am scared of the future", "usrChoiceTwoGroup_I have fears of the future",
+           "usrChoiceTwoGroup_I have fears of missing the university experience", "usrChoiceTwoGroup_I am scared of missing the university", "usrChoiceTwoGroup_I have fears of not going to university", "usrChoiceTwoGroup_I am scared of not going to university", "usrChoiceTwoGroup_I have fears that I cannot see my friends", "usrChoiceTwoGroup_I am scared that I cannot see my friends", "usrChoiceTwoGroup_I have fears that I cannot visit friends", "usrChoiceTwoGroup_I am scared that I cannot visit friends", "usrChoiceTwoGroup_I have fears of losing friends", "usrChoiceTwoGroup_I am scared that I may lose my friends", "usrChoiceTwoGroup_I have fears that I cannot see my family", "usrChoiceTwoGroup_I am scared that I cannot see my family", "usrChoiceTwoGroup_I have fears that I cannot visit a family member", "usrChoiceTwoGroup_I am scared that I cannot visit family", "usrChoiceTwoGroup_I have fears of losing a family member", "usrChoiceTwoGroup_I am scared that I may lose my family", "usrChoiceTwoGroup_I have fears of losing touch with family", "usrChoiceTwoGroup_Scared of losing touch with family", "usrChoiceTwoGroup_I have fears of losing touch with friend", "usrChoiceTwoGroup_Scared of losing touch with friends", "usrChoiceTwoGroup_I have fears of not socialising", "usrChoiceTwoGroup_I am scared of not socialising", "usrChoiceTwoGroup_I am fearful of not sociable", "usrChoiceTwoGroup_I am scared of not sociable", "usrChoiceTwoGroup_I have fears of online learning", "usrChoiceTwoGroup_How long will I have to conduct online learning", "usrChoiceTwoGroup_I have fears that online learning will never end", "usrChoiceTwoGroup_I am scared of online learning", "usrChoiceTwoGroup_I am scared of online learning", "usrChoiceTwoGroup_I have fears of not making friends", "usrChoiceTwoGroup_I am scared of not making friends", "usrChoiceTwoGroup_not making friends", "usrChoiceTwoGroup_I have fears that I may not experience university this year", "usrChoiceTwoGroup_I have fears that I cannot see a relative", "usrChoiceTwoGroup_I am scared that I cannot see my relatives", "usrChoiceTwoGroup_I have fears that I cannot visit a relative", "usrChoiceTwoGroup_I am scared that I cannot visit relatives", "usrChoiceTwoGroup_I have fears of losing a relative"
+         ],
+         "responses": ["It is heavily advised to take a deep breath and avoid researching social media related articles or unprofessional/peer-reviewed articles/reports as multitudes of these articles are full of dubious and/or blatantly falsified reports. In actuality, the future is looking quite positive as lockdowns are starting to ease and the vaccinations are rolling out at an efficient rate. Things are truly looking like we have almost made it to the other side of these few dubious/confusing/scary years. Stay safe, be sensible, we will make it through this. Do you want me to redirect you to a hopefull article regarding the future of the epidemic?"],
+         "context_set": "fear_Future1",
+          "context_filter": "coronaFrs",
+          "intent": "uniTheFutEpeCon1_"
+        },
+        {"tag": "fear_Future2_ConsentYes",
+         "patterns": ["uniTheFutEpeCon1_yes", "uniTheFutEpeCon1_oh yes", "uniTheFutEpeCon1_sure"],
+         "responses": ["If you are still concerned regarding the future of the epidemic/lockdowns/restrictions then it is advised to refrain from continuously researching covid-19 related news and the medias tendency to fluctuate from hopefulness to doom and gloom can put a damper on anybodys day. Take some time to converse with your family and friends about your worries on social media and/or participate in hobbies as to keep your mind at ease and remember that you are not alone. We are all in the same boat and we will make it through this."],
+          "context_filter": "fear_Future1",
+          "web": "https://www.bbc.co.uk/news/uk-56469092"
+        },
+        {"tag": "fear_Future2_ConsentNo",
+         "patterns": ["uniTheFutEpeCon1_no", "uniTheFutEpeCon1_oh no", "uniTheFutEpeCon1_nope"],
+         "responses": ["Thats Fine! However, If you are still concerned regarding the future of the epidemic/lockdowns/restrictions then it is advised to refrain from continuously researching covid-19 related news and the medias tendency to fluctuate from hopefulness to doom and gloom can put a damper on anybodys day. Take some time to converse with your family and friends on social media about your worries and/or participate in hobbies as to keep your mind at ease and remember that you are not alone. We are all in the same boat and we will make it through this."],
+          "context_filter": "fear_Future1"
+        }
+
+]
+}
