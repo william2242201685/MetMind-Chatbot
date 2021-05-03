@@ -63,7 +63,7 @@ with open('intents.json') as json_data:
 
 # load our saved model
 try:
-    nn_generate.model.load('./tflearnModel/model.tflearn"')
+    nn_generate.model.load('./tflearnModel/model.tflearn')
 except ValueError:
     print("There seems to be an error trying to load the neural network from ./tflearnModel/model.tflearn")
     sys.exit("Closing Program")
