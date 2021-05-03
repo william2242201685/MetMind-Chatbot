@@ -1,4 +1,6 @@
-#ADD REFERENCE TO https://github.com/FreeBirdsCrew/AI_ChatBot_Python/blob/master/Contextual%20Chatbot%20-%20NLP%20and%20Tensorflow.ipynb [FOR CONTEXTUAL]
+#This code has been inspired by the works of:
+#FreeBirdsCrew (2020) CHATBOTS - Using Natural Language Processing and Tensorflow Available At: https://github.com/FreeBirdsCrew/AI_ChatBot_Python/blob/master/Contextual%20Chatbot%20-%20NLP%20and%20Tensorflow.ipynb (Accessed: 6/02/2020)
+#For Dialogue Contexulisation
 
 
 import nltk
