@@ -15,7 +15,7 @@ The Mental Health Sector towards anxiety counselling face a significant resource
 #### The projects UI design and flask implementation has been inspired from the works of
 1: Huzaifsayed (2020) coronabot-chatterbot Available At: https://github.com/huzaifsayed/coronabot-chatterbot (Accessed: 15/09/2020)
 
-#### The projects implementation of the neural network dialog contextualisation has been inspired from the works of
+#### The projects implementation of the neural network and dialog contextualisation has been inspired from the works of
 1: ugik (2017) Tensorflow chat-bot model.ipynb Available At:  https://github.com/ugik/notebooks/blob/master/Tensorflow%20chat-bot%20model.ipynb (Accessed: 2/02/2020)
 
 2: FreeBirdsCrew (2020) CHATBOTS - Using Natural Language Processing and Tensorflow Available At:  https://github.com/FreeBirdsCrew/AI_ChatBot_Python/blob/master/Contextual%20Chatbot%20-%20NLP%20and%20Tensorflow.ipynb (Accessed: 6/02/2020)
