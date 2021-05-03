@@ -41,13 +41,13 @@ The Mental Health Sector towards anxiety counselling face a significant resource
 
 2: Ignore the two generated folders
 
+![alt text](resources/thumbnail_Outlook-u0otarxo.png)
 
-
- 
 
 #### Uploading intents.json
 1: Drag your downloaded intents.json under these generated folders[Into the empty space]
- 
+
+![alt text](resources/Outlook-madpu2q3.png)
 
 
 
@@ -78,7 +78,7 @@ The Mental Health Sector towards anxiety counselling face a significant resource
 
 Your file storage should now look similar to this example
  
-
+![alt text](resources/thumbnail_Outlook-zifjas2x.png)
  
 #### Running the code
 1: Press "Runtime" on the top of the screen
@@ -88,6 +88,8 @@ Your file storage should now look similar to this example
 3: The code may time some time to compile. Please do not interrupt or close the program
 
 4: Once the code is fully compiled then you will see this at the bottom of the screen[Scroll to the bottom]. You will need to click on the second link
+
+![alt text](resources/Outlook-gxg3ttf3.png)
 
  
 
@@ -106,16 +108,15 @@ If you are experiencing any of these issues then you can easily combat against t
 
 Step 1: Press edit on the taskbar located near the top of the screen
 
-
- 
-
-
+![alt text](resources/thumbnail_Outlook-gj2hlsgx.png)
 
 Step 2: Press Notebook settings
 
 Step 3: Click on the Hardware Accellerator Dropdown list and select GPU
 
 Step 4: Press Save
+
+![alt text](resources/thumbnail_Outlook-40efwiuv.png)
  
 #### NOTE 3: DO NOT CLOSE THE GOOGLE COLAB TAB WHILST THE CHATBOT IS RUNNING! THIS IS NEEDED FOR THE CHATBOTS FUNCTIONALITY
 
