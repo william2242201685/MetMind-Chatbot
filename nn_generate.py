@@ -1,5 +1,6 @@
-#ADD REFERENCE TO https://github.com/ugik/notebooks/blob/master/Tensorflow%20chat-bot%20model.ipynb
-#ADD REFERENCE TO https://www.youtube.com/watch?v=PzzHOvpqDYs&ab_channel=TechWithTim
+# This code has been inspired by the works of:
+# 1: Tech With Tim (2019) Python Chat Bot Tutorial - Chatbot with Deep Learning (Part 3) Available At: https://www.youtube.com/watch?v=PzzHOvpqDYs&ab_channel=TechWithTim (Accessed: 16/10/2020)
+# 2: ugik (2017) Tensorflow chat-bot model.ipynb Available At:  https://github.com/ugik/notebooks/blob/master/Tensorflow%20chat-bot%20model.ipynb (Accessed: 2/02/2021)
 
 import tflearn
 import tensorflow as tf
