@@ -13,16 +13,16 @@ The Mental Health Sector towards anxiety counselling face a significant resource
 ## Project References
 
 #### The projects UI design and flask implementation has been inspired from the works of
-1: (Use-reference-for: https://github.com/huzaifsayed/coronabot-chatterbot)
+1: Huzaifsayed (2020) coronabot-chatterbot Available At: https://github.com/huzaifsayed/coronabot-chatterbot (Accessed: 15/09/2020)
 
 #### The projects implementation of the neural network dialog contextualisation has been inspired from the works of
-1: (Use-reference-for: https://github.com/ugik/notebooks/blob/master/Tensorflow%20chat-bot%20model.ipynb)
+1: ugik (2017) Tensorflow chat-bot model.ipynb Available At:  https://github.com/ugik/notebooks/blob/master/Tensorflow%20chat-bot%20model.ipynb (Accessed: 2/02/2020)
 
-2: (Use-reference-for: https://github.com/FreeBirdsCrew/AI_ChatBot_Python/blob/master/Contextual%20Chatbot%20-%20NLP%20and%20Tensorflow.ipynb)
+2: FreeBirdsCrew (2020) CHATBOTS - Using Natural Language Processing and Tensorflow Available At:  https://github.com/FreeBirdsCrew/AI_ChatBot_Python/blob/master/Contextual%20Chatbot%20-%20NLP%20and%20Tensorflow.ipynb (Accessed: 6/02/2020)
 
-3: (Use-reference-for: https://www.youtube.com/watch?v=PzzHOvpqDYs&ab_channel=TechWithTim) 
+3: Tech With Tim (2019) Python Chat Bot Tutorial - Chatbot with Deep Learning (Part 3) Available At: https://www.youtube.com/watch?v=PzzHOvpqDYs&ab_channel=TechWithTim (Accessed: 16/10/2020)
 
-4: (Use-reference-for: https://www.youtube.com/watch?v=ON5pGUJDNow)
+4: Tech With Tim (2019) Python Chat Bot Tutorial - Chatbot with Deep Learning (Part 2) Available At: https://www.youtube.com/watch?v=ON5pGUJDNow (Accessed: 16/10/2020)
 
 
 ## Opening MetMind on google colab
