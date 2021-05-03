@@ -1,4 +1,6 @@
-/* ADD REFERENCE TO: https://github.com/huzaifsayed/coronabot-chatterbot */
+/* This code has been inspired by the works of:
+ 1: Huzaifsayed (2020) coronabot-chatterbot Available At: https://github.com/huzaifsayed/coronabot-chatterbot (Accessed: 15/09/2020)
+ */
 
 :root {
   --body-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
