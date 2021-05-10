@@ -61,7 +61,7 @@ qaCode = binascii.unhexlify(
 with open('intents.json') as json_data:
     intents = json.load(json_data)
 
-# load our saved model
+# This will load the model that was generated in nn_generate
 try:
     nn_generate.model.load('./tflearnModel/model.tflearn')
 except ValueError:
@@ -70,9 +70,9 @@ except ValueError:
 
 
 def clean_up_sentence(sentence):
-    # tokenize the pattern
+    #This is designed to tokenize the  user input
     sentence_words = nltk.word_tokenize(sentence)
-    # stem each word
+    #This is designed to stem the words from the users inputs
     sentence_words = [stemmer.stem(word.lower()) for word in sentence_words]
     return sentence_words
 
@@ -98,23 +98,22 @@ def myTime():
     print(ContextHistory.time)
 
 
-# create a data structure to hold user context
+
 context = {}
 
 ERROR_THRESHOLD = 0.70
 
 
 def classify(sentence):
-    # generate probabilities from the model
+    #This section is designed to calculate the probability values from the users input to the model
     results = nn_generate.model.predict([bow(sentence, nn_generate.words)])[0]
-    # filter out predictions below a threshold
+    #If a prediction is below the error thresehold of 0.70 then it is filtered out
     results = [[i, r] for i, r in enumerate(results) if r > ERROR_THRESHOLD]
-    # sort by strength of probability
+    #Calculates and sorts the probability rates comparing to its strength/probability
     results.sort(key=lambda x: x[1], reverse=True)
     return_list = []
     for r in results:
         return_list.append((nn_generate.classes[r[0]], r[1]))
-    # return tuple of intent and probability
     return return_list
 
 
@@ -182,13 +181,13 @@ def email(userInput):
 
 def response(sentence, userID='123', show_details=False):
     results = classify(sentence)
-    # if we have a classification then find the matching intent tag
+    #If the user input is correctly classified find matching intent/tag
     if results:
-        # loop as long as there are matches to process
+        #Loop through possible matches
         print(results)
         while results:
             for i in intents['intents']:
-                # find a tag matching the first result
+                #Get tag from first result(if matching)
                 if i['tag'] == results[0][0]:
 
                     if 'email' in i:
@@ -281,3 +280,4 @@ def index():
 
 if __name__ == "__main__":
     app.run(threaded=True)
+
