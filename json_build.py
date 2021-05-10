@@ -30,10 +30,10 @@ classes = []
 documents = []
 ignore_words = ['?']
 
-# loop through each sentence in our intents patterns
+#This section is designed to loop through each pattern in an intent
 for intent in intents['intents']:
     for pattern in intent['patterns']:
-        # tokenize each word in the sentence
+        #This section is designed for tokenization: This will be proccessed to all words in a sentence
         try:
             w = nltk.word_tokenize(pattern)
         except LookupError as ntlkerror:
@@ -45,7 +45,8 @@ for intent in intents['intents']:
         if intent['tag'] not in classes:
             classes.append(intent['tag'])
 
-# stem and lower each word and remove duplicates
+#This section is designed for stemming each word
+#This section will also ensure that any capital letter will be tranformed to lower case
 try:
     words = [stemmer.stem(w.lower()) for w in words if w not in "?"]
     words = sorted(list(set(words)))
@@ -53,5 +54,6 @@ except IndexError:
     print("Error stemming words")
     sys.exit('Closing Program')
 
-# remove duplicates
+
 classes = sorted(list(set(classes)))
+
