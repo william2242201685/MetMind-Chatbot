@@ -218,6 +218,7 @@ def response(sentence, userID='123', show_details=False):
                         if 'context_set' not in i and myOldContext.myEmailIntent < 1:
                             myOldContext.contextOld = ""
                             myOldContext.myIntent = ""
+                            myOldContext.myFirstContext = ""
                             myOldContext.myOldTag = myOldContext.chatRestart
                             myResp = advancedResponse(i) + myOldContext.chatRestart
                         else:
