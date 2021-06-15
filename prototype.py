@@ -170,7 +170,7 @@ def email(userInput):
             server.sendmail(myOldContext.studentEmail, recEmail, msg)
             myOldContext.myEmailIntent = 0
             myOldContext.contextOld = ""
-
+            myOldContext.myFirstContext = ""
             myOldContext.myIntent = ""
             myOldContext.myOldTag = myOldContext.chatRestart
             return "email sent! you will hear from the wellbeing team shortly" + myOldContext.chatRestart
