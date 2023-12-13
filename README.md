@@ -1,4 +1,4 @@
-# MetMind-Chatbot
+# How should an Artificial-intelligence Oriented Chat Bot Informant Be Implemented In Universities To Anonymously Support Students Through Covid-anxiety
 
 ## About the project
 
